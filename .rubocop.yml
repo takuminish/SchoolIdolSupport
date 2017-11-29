@@ -1,0 +1,14 @@
+AllCops:
+  Include:
+    - '**/Rakefike'
+    - '**/donfig.ru'
+  Exclude:
+    - 'config/**/*'
+    - 'db/**/*'
+    - 'vender/**/*'
+    - '.bundle/**/*'
+    - 'script/**/*'
+    - 'bin/**/*'
+    - 'bundle_bin/*'
+    - !ruby/regexp /old_and_unused\.rb$/
+  
