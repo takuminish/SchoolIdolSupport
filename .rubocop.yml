@@ -13,4 +13,6 @@ AllCops:
     - 'bin/**/*'
     - 'bundle_bin/*'
     - !ruby/regexp /old_and_unused\.rb$/
-  
+
+Rails:
+ Enabled: true
