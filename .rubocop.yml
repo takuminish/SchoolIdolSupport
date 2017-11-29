@@ -1,0 +1,18 @@
+inherit_from: .rubocop_todo.yml
+
+AllCops:
+  Include:
+    - '**/Rakefike'
+    - '**/donfig.ru'
+  Exclude:
+    - 'config/**/*'
+    - 'db/**/*'
+    - 'vender/**/*'
+    - '.bundle/**/*'
+    - 'script/**/*'
+    - 'bin/**/*'
+    - 'bundle_bin/*'
+    - !ruby/regexp /old_and_unused\.rb$/
+
+Rails:
+ Enabled: true
