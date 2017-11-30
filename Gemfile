@@ -4,6 +4,21 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
   "https://github.com/#{repo_name}.git"
 end
+# respec
+group :development, :test do
+  gem "rspec-rails"
+  gem "factory_girl_rails"
+  gem "guard-rspec"
+  gem "spring-commands-rspec"
+end
+
+group :test do
+  gem "faker"
+  gem "database_cleaner"
+  gem "launchy"
+  gem "selenium-webdriver"
+  gem "shoulda-matchers"
+end
 
 # rubocop
 gem 'rubocop', require: false
