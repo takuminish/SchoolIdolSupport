@@ -6,18 +6,18 @@ git_source(:github) do |repo_name|
 end
 # respec
 group :development, :test do
-  gem "rspec-rails"
-  gem "factory_bot_rails"
-  gem "guard-rspec"
-  gem "spring-commands-rspec"
+  gem 'factory_bot_rails'
+  gem 'guard-rspec'
+  gem 'rspec-rails'
+  gem 'spring-commands-rspec'
 end
 
 group :test do
-  gem "faker"
-  gem "database_cleaner"
-  gem "launchy"
-  gem "selenium-webdriver"
-  gem "shoulda-matchers"
+  gem 'database_cleaner'
+  gem 'faker'
+  gem 'launchy'
+  gem 'selenium-webdriver'
+  gem 'shoulda-matchers'
 end
 
 # rubocop
