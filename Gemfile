@@ -4,6 +4,21 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
   "https://github.com/#{repo_name}.git"
 end
+# respec
+group :development, :test do
+  gem 'factory_bot_rails'
+  gem 'guard-rspec'
+  gem 'rspec-rails'
+  gem 'spring-commands-rspec'
+end
+
+group :test do
+  gem 'database_cleaner'
+  gem 'faker'
+  gem 'launchy'
+  gem 'selenium-webdriver'
+  gem 'shoulda-matchers'
+end
 
 # rubocop
 gem 'rubocop', require: false
@@ -39,7 +54,6 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
-  gem 'selenium-webdriver'
 end
 
 group :development do
