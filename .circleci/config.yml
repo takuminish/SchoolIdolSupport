@@ -46,13 +46,17 @@ jobs:
       - run:
           name: run rspec
           command: |
-            mkdir /tmp/test-results
-            bundle exec rspec --format progress \
-                            --format RspecJunitFormatter \
-                            --out /tmp/test-results/rspec.xml \
-                            --format progress \
+             mkdir /tmp/test-results
+             TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)"
+            
+             bundle exec rspec --format progress \
+             --format RspecJunitFormatter \
+             --out /tmp/test-results/rspec.xml \
+             --format progress \
+            "${TEST_FILES}"
+
       - run:
-          name: run rubocop
+        name: run rubocop
           command: |
             bundle exec rubocop -r $(bundle show rubocop-junit-formatter)/lib/rubocop/formatter/junit_formatter.rb \
                                 -c .rubocop.yml --format RuboCop::Formatter::JUnitFormatter \
