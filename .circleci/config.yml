@@ -43,23 +43,23 @@ jobs:
       - run: bundle exec rake db:schema:load
 
       # run tests!
-    - run:
-           name: run rspec
-           command: |
-             mkdir /tmp/test-results
-             bundle exec rspec --format progress \
-                             --format RspecJunitFormatter \
-                             --out /tmp/test-results/rspec.xml \
-                             --format progress \
-       - run:
-           name: run rubocop
-           command: |
-             bundle exec rubocop -r $(bundle show rubocop-junit-formatter)/lib/rubocop/formatter/junit_formatter.rb \
-                                 -c .rubocop.yml --format RuboCop::Formatter::JUnitFormatter \
-                                 --out /tmp/test-results/rubocop.xml
-       # collect reports
-       - store_test_results:
-           path: /tmp/test-results
-       - store_artifacts:
-           path: /tmp/test-results
+      - run:
+          name: run rspec
+          command: |
+            mkdir /tmp/test-results
+            bundle exec rspec --format progress \
+                            --format RspecJunitFormatter \
+                            --out /tmp/test-results/rspec.xml \
+                            --format progress \
+      - run:
+          name: run rubocop
+          command: |
+            bundle exec rubocop -r $(bundle show rubocop-junit-formatter)/lib/rubocop/formatter/junit_formatter.rb \
+                                -c .rubocop.yml --format RuboCop::Formatter::JUnitFormatter \
+                                --out /tmp/test-results/rubocop.xml
+      # collect reports
+      - store_test_results:
+          path: /tmp/test-results
+      - store_artifacts:
+          path: /tmp/test-results
 destination: test-results
