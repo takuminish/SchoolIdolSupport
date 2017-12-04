@@ -43,14 +43,14 @@ jobs:
       - run: bundle exec rake db:schema:load
 
       # run tests!
-      - run:
-          name: run rspec
-          command: |
-            mkdir /tmp/test-results
-            bundle exec rspec --format progress \
-                            --format RspecJunitFormatter \
-                            --out /tmp/test-results/rspec.xml \
-                            --format progress \
+#      - run:
+#          name: run rspec
+#          command: |
+#            mkdir /tmp/test-results
+#            bundle exec rspec --format progress \
+#                            --format RspecJunitFormatter \
+#                            --out /tmp/test-results/rspec.xml \
+#                            --format progress \
       - run:
           name: run rubocop
           command: |
