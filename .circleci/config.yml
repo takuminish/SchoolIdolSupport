@@ -11,6 +11,7 @@ jobs:
         environment:
          - RAILS_ENV: test
          - TEST_DB_ROLE: root
+	 - DB_HOST: 127.0.0.1
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
