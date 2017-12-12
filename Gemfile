@@ -18,6 +18,9 @@ group :test do
   gem 'launchy'
   gem 'selenium-webdriver'
   gem 'shoulda-matchers'
+  gem 'rspec_junit_formatter'
+  gem 'rubocop-junit-formatter'
+  gem 'rails-controller-testing'
 end
 
 # rubocop
