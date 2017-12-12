@@ -16,6 +16,9 @@ group :test do
   gem 'database_cleaner'
   gem 'faker'
   gem 'launchy'
+  gem 'rails-controller-testing'
+  gem 'rspec_junit_formatter'
+  gem 'rubocop-junit-formatter'
   gem 'selenium-webdriver'
   gem 'shoulda-matchers'
 end
