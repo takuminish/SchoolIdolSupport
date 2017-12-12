@@ -28,7 +28,7 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
-      -run:
+      - run:
         name: Wait for db
 	  command: dockerize -wait' tcp://localhost:3306 -timeout 1m'
 
