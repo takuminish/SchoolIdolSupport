@@ -7,7 +7,7 @@
 # dotenv
 .env
 
-# database.yml
+# Ignore database.yml
 /config/database.yml
 
 
